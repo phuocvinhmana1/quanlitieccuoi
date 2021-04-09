@@ -1,0 +1,73 @@
+﻿@model List<Modelss.Model.DatTiec>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Danh sách tiệc</h2>
+
+<table class ="table">
+    <tr>
+        <th>
+            Tên sảnh
+        </th>
+        <th>
+            Ngày tổ chức
+        </th>
+        <th>
+            Tên khách hàng
+        </th>
+        <th>
+            Buổi
+        </th>
+ 
+
+         <th>
+            Tên thực đơn KH 
+        </th>
+        <th>
+            Tên gói dịch vụ KH
+        </th>
+        <th>
+            Tổng tiền
+        </th>
+        <th>
+            Trạng thái
+        </th>
+    </tr>
+
+@foreach (var item in Model) 
+{
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaSanh)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgayToChuc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaKhachHang)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Buoi)
+        </td>
+
+         <td>
+            @Html.DisplayFor(modelItem => item.MaThucDonKHChon)
+        </td>
+         <td>
+            @Html.DisplayFor(modelItem => item.MaGoiDichVuKHChon)
+        </td>
+         <td>
+            @Html.DisplayFor(modelItem => item.TongTien)
+        </td>
+          <td>
+            @Html.DisplayFor(modelItem => item.TrangThai)
+        </td>
+
+     
+    </tr>
+}
+
+</table>

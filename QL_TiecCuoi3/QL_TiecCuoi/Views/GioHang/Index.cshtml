@@ -1,0 +1,110 @@
+﻿@model List<Modelss.Code.GioHang>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    var session = (Modelss.Common.UserLogin)Session[Modelss.Common.CommonConstans.TENDANGNHAP_SESSTION];
+    }
+
+
+    @{if(session == null)
+    {
+        <ul style="margin-left:1300px">
+            <li><a href="">Đăng xuất</a></li>
+        </ul>
+        
+    }
+    else
+    {
+          <ul style="margin-left:1300px"> 
+              <li>Xin chào,@session.tendangnhap</li>
+          </ul>
+      }
+    }
+
+<section class="cart_area section_padding">
+        <div class="container">
+          <div class="cart_inner">
+            <div class="table-responsive">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Tên sản phẩm</th>
+                      <th scope="col">Ảnh</th>
+                    <th scope="col">Giá</th>
+                    <th scope="col">Số lượng</th>
+                    <th scope="col">Giá tiền</th>
+                  </tr>
+                </thead>
+                <tbody> 
+
+                @foreach(var item in Model)
+                {
+                  <tr>
+                      <td>@item.SanPham.TenThucDon</td>
+                      <td><img src="../Content/hinhanh/anhthucdon/@item.SanPham.HinhAnh" width="100" height ="100"></td>
+                      <td>5000</td>
+                      <td>5000</td>
+                      <td>5000</td>
+                     
+                  </tr>
+                }
+
+
+                  
+                  <tr class="shipping_area">
+                    <td></td>
+                    <td></td>
+                    <td>
+                      <h5>Shipping</h5>
+                    </td>
+                    <td>
+                      <div class="shipping_box">
+                        <ul class="list">
+                          <li>
+                            Flat Rate: $5.00
+                            <input type="radio" aria-label="Radio button for following text input">
+                          </li>
+                          <li>
+                            Free Shipping
+                            <input type="radio" aria-label="Radio button for following text input">
+                          </li>
+                          <li>
+                            Flat Rate: $10.00
+                            <input type="radio" aria-label="Radio button for following text input">
+                          </li>
+                          <li class="active">
+                            Local Delivery: $2.00
+                            <input type="radio" aria-label="Radio button for following text input">
+                          </li>
+                        </ul>
+                        <h6>
+                          Calculate Shipping
+                          <i class="fa fa-caret-down" aria-hidden="true"></i>
+                        </h6>
+                        <select class="shipping_select">
+                          <option value="1">Bangladesh</option>
+                          <option value="2">India</option>
+                          <option value="4">Pakistan</option>
+                        </select>
+                        <select class="shipping_select section_bg">
+                          <option value="1">Select a State</option>
+                          <option value="2">Select a State</option>
+                          <option value="4">Select a State</option>
+                        </select>
+                        <input class="post_code" type="text" placeholder="Postcode/Zipcode" />
+                        <a class="btn_1" href="#">Update Details</a>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="checkout_btn_inner float-right">
+                <a class="btn_1" href="#">Continue Shopping</a>
+                <a class="btn_1 checkout_btn_1" href="#">Proceed to checkout</a>
+              </div>
+            </div>
+          </div>
+      </section>

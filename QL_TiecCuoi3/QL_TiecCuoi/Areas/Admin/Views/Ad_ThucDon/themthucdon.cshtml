@@ -1,0 +1,58 @@
+﻿@{
+    ViewBag.Title = "themSP";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    
+}
+
+
+<div class="container-fluid login-banner">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-9">
+                <form action="@Url.Action("xulithemthucdon")" method="post" enctype="multipart/form-data">
+                    <div class="container login-table">
+                        <hr />
+
+                     
+                        <label for="tenthucdon"><b>Tên thực đơn</b></label>
+                        <br />
+                       
+                    
+                        
+                        <input type="text" name="tenthucdon"  required />
+
+                        <br />
+
+                        <label for="soluongmon"><b>Số lượng món</b></label>
+                        <br />
+                        <input type="text" name="soluongmon"  required />
+
+                        <br />
+
+                        <label for="hinh"><b>Hình Ảnh</b></label>
+                        <br />
+                        <input type="file" name="hinh" required />
+                        <br />
+                        
+                       
+                        <label for="trangthai"><b>Trạng thái</b></label>
+                        <br />
+
+                        <input  type="text" name="trangthai"  required />
+
+                        <br />
+                        <label for="ghichu"><b>Ghi chú</b></label>
+                        <br />
+                        <input  type="text" name="ghichu"  required />
+
+                        <br />
+                        <br />
+                        <input type="submit" value="Save" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

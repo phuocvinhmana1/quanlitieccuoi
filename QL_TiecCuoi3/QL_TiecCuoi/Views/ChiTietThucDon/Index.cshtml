@@ -1,0 +1,61 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using Modelss.Model;
+
+@model ThucDon
+
+@{
+    var session = (Modelss.Common.UserLogin)Session[Modelss.Common.CommonConstans.TENDANGNHAP_SESSTION];
+    }
+
+
+@{if(session != null)
+      {
+          <ul style="margin-left:1000px"> 
+              <li>Xin chào,   @session.tendangnhap</li>
+          </ul>
+       
+        <ul style="margin-left:1000px">
+            <li>@Html.ActionLink("Thoát","DangXuat","DangNhap")</li>
+        </ul>
+    }
+    }
+
+<div class="container minheight" >
+    <hr style="width:100%"/>
+    <div class="row">
+        <div class="col-md-6">
+            <img src="../Content/hinhanh/anhthucdon/@Model.HinhAnh" width="500" height="300 "/>
+            <br />
+            <br />
+                 <img src="../Content/hinhanh/anhthucdon/platinum.jpg" width="500" height="300"/>
+        </div>
+        <div class="col-md-6">
+            <p>Mã thực đơn: @Model.MaThucDon</p>
+            <h3>Tên thực đơn: @Model.TenThucDon</h3>
+
+               <p>Danh sách món ăn</p>
+              @{ Html.RenderAction("layTenMonAn", "ThucDon", new { thucdon = @Model.MaThucDon }); }
+
+            <p>
+                <br />
+
+                <br />
+
+               Tùy vào thành viên trên bàn ăn và sở thích của mỗi người mà khách có thể gọi món theo thực đơn A La Carte.
+
+Thực đơn A La Carte thường được áp dụng cho những món Âu. Tuy nhiên, với các món ăn Á vẫn có thể sử dụng loại thực đơn này. Đó là những món Á như: món Việt, món Hàn, món Nhật,…thường được trình bày chung trong một phần lớn, một món ăn có từ 2 phần ăn, 4 phần ăn,…nên khi chọn, thực khách phải tự ước tính hoặc nhờ tư vấn để gọi món vừa thích hợp với khẩu phần ăn, vừa phù hợp với sở thích của các thành viên trong bàn ăn tại nhà hàng.
+            </p>
+            <h4 style="margin-top:10px">Giá bán: @Model.TongDonGia VND</h4>
+            
+            <a href="@Url.Action("themthucdon", "ChiTietThucDon", new { mathucdon = @Model.MaThucDon})" class="genric-btn success" style="margin-top:20px">Thêm vào thực đơn của bạn</a>
+            <br />
+            <p>Lưu ý: Việc này sẽ làm mất tất cả món ăn mà bạn đã chọn</p>
+         
+            
+        </div>
+    </div>
+</div>

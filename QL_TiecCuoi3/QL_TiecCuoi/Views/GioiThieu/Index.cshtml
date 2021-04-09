@@ -1,0 +1,117 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{
+    var session = (Modelss.Common.UserLogin)Session[Modelss.Common.CommonConstans.TENDANGNHAP_SESSTION];
+    }
+
+@{if(session != null)
+      {
+          <ul style="margin-left:1000px"> 
+              <li>Xin chào, @session.tendangnhap</li>
+          </ul>
+       
+        <ul style="margin-left:1000px">
+            <li>@Html.ActionLink("Thoát","DangXuat","DangNhap")</li>
+        </ul>
+    }
+    }
+
+<div class="about-details section-padding30" style="margin-top:-100px">
+            <div class="container">
+                <div class="row">
+                    <div class="offset-xl-1 col-lg-10">
+                        <div class="about-details-cap mb-50">
+                            <h4>Về chúng tôi</h4>
+                            <p> 
+                                Tọa lạc trên trục đường chính cách trung tâm TP.HCM khoảng 20 phút lái xe và cách sân bay Tân Sơn Nhất 1.5 km – nằm trong vòng an ninh. TimeZone sở hữu 6 sảnh lớn phối hợp hoàn hảo cùng kiến trúc Châu Âu sang trọng. Hệ thống trang thiết bị hiện đại cùng khả năng thay đổi thiết kế linh hoạt với sức chứa lên đến hơn 2.500 khách, TimeZone là địa điểm lý tưởng để tổ chức hội nghị và yến tiệc. Đến với TimeZone, bạn sẽ được trải nghiệm những tiện nghi và dịch vụ tuyệt vời của một trong những Trung tâm Hội nghị - Tiệc cưới uy tín hàng đầu trong khu vực TP.HCM.
+                            </p>
+                            <p> TimeZone được xây dựng trên khuôn viên rộng gần 4,000m2, đạt tiêu chuẩn 4 sao, cách sảnh tiệc cưới được thiết kế sang trọng, rộng rãi với hệ thống âm thanh ánh sáng cùng công nghệ hiện đại đáp ứng cho nhiều loại sự kiện và có sức phục vụ lên đến 2.000 khách.</p>
+                        </div>
+
+                         <img class="d-block img-fluid-12" src="../Content/hinhanh/anhsanhtiec/ab.jpg" width="940" >
+                        <br />
+                        <br />
+                        <div class="about-details-cap mb-50">
+                            <h4>Điểm nổi bậc</h4>
+                            <p>Chúng tôi mang đến một không gian đa chức năng phù hợp cho nhiều loại hình hội nghị, sự kiện và yến tiệc trọng đại.
+
+Sảnh tiệc được trang bị Hệ thống âm thanh, ánh sáng, màn hình LED – LCD hiện đại mới nhất, giúp truyền tải thông điệp một cách dễ dàng với hình ảnh sắc nét.
+
+Một buổi họp nhỏ có thể phát sinh những ý tưởng lớn khi mọi người ngồi lại cùng nhau làm thay đổi bức tranh tài chính hoặc mang đến cơ cấu hiệu quả cho một doanh nghiệp. Chúng tôi lắng nghe, thấu hiểu và sáng tạo để sự kiện của quý khách luôn là "Điểm nhấn hoàn hảo - Trên hành trình đi đến thành công"
+
+Ẩm thực là một phần quan trọng thay lời cảm ơn của chủ tiệc gửi tới khách mời. Chúng tôi luôn tự hào về đội ngũ đầu bếp có thể đáp ứng yêu cầu khắt khe nhất về ẩm thực của mỗi vị khách.
+                            </p>
+                            <p> Khu vực sảnh đón là nơi đầu tiên tạo ấn tượng với khách hàng, một không gian rộng mở, thông thoáng, cùng âm thanh từ cây dương cầm được đặt ngay mặt tiền của Trung Tâm sẽ thay Chủ Tiệc đón chào khách mời một cách lịch sự và thân thiện nhất.
+
+Lobby đón khách sẽ giúp chủ tiệc tạo thiện cảm, ấn tượng với quan khách ngay từ khi bước chân vào. Với tiêu chí tạo một không gian rộng mở, không cầu kỳ về chi tiết, Capella Park View kết hợp hoa tươi với bố cục vật liệu, tạo không gian hài hòa và ấm cúng cho khu vực sảnh đón</p>
+
+                            <p>Trang trí:
+
+Từ khu vực đón khách cho đến sân khấu và bàn tiệc đều được đội ngũ có tay nghề và nhiều kinh nghiệm trong việc trang trí làm cho trở nên sinh động và sang trọng hơn.
+
+Khách mời sẽ cảm thấy ấn tượng và cảm nhận rõ nét về phong cách ngay khi đặt chân vào khu vực đón khách. Tại đây, có khu vực chụp hình được kết từ hoa tươi, pha lê, hoa lụa cao cấp, sẽ là nơi ghi lại những bức hình kỷ niệm của cô dâu chú rể và khách mời.
+
+Chương trình:
+
+Những chương trình biểu diễn nghệ thuật đặc sắc, sáng tạo và bất ngờ đến từ các nghệ sĩ biểu diễn chuyên nghiệp sẽ là một mở đầu ấn tượng cho hôn lễ của bạn. Các chuyên viên tổ chức sự kiện của chúng tôi sẽ kể lại câu chuyện tình yêu của bạn bằng ngôn ngữ của âm nhạc và nghệ thuật để chắp cánh cho tình yêu ấy thăng hoa trong ngày hạnh phúc.</p>
+
+
+                            <img class="d-block img-fluid-12" src="../Content/hinhanh/v3.jpg" width="940" >
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- About Details End -->
+        <!--? Video Area Start -->
+        <div class="video-area mb-100">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-lg-12">
+                    <div class="video-wrap">
+                        <div class="play-btn "><a class="popup-video" href="https://www.youtube.com/watch?v=KMc6DyEJp04"><i class="fas fa-play"></i></a></div>
+                    </div>
+                    </div>
+                </div>
+                <!-- Arrow -->
+                <div class="thumb-content-box">
+                    <div class="thumb-content">
+                        <h3>Next Video</h3>
+                        <a href="#"> <i class="flaticon-arrow"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Video Area End -->
+        <!--? Shop Method Start-->
+        <div class="shop-method-area">
+            <div class="container">
+                <div class="method-wrapper">
+                    <div class="row d-flex justify-content-between">
+                        <div class="col-xl-4 col-lg-4 col-md-6">
+                            <div class="single-method mb-40">
+                                <i class="ti-package"></i>
+                                <h6>Free Shipping Method</h6>
+                                <p>aorem ixpsacdolor sit ameasecur adipisicing elitsf edasd.</p>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-4 col-md-6">
+                            <div class="single-method mb-40">
+                                <i class="ti-unlock"></i>
+                                <h6>Secure Payment System</h6>
+                                <p>aorem ixpsacdolor sit ameasecur adipisicing elitsf edasd.</p>
+                            </div>
+                        </div> 
+                        <div class="col-xl-4 col-lg-4 col-md-6">
+                            <div class="single-method mb-40">
+                                <i class="ti-reload"></i>
+                                <h6>Secure Payment System</h6>
+                                <p>aorem ixpsacdolor sit ameasecur adipisicing elitsf edasd.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>

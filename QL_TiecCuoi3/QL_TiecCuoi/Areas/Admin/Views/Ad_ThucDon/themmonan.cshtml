@@ -1,0 +1,34 @@
+﻿@{
+    ViewBag.Title = "themSP";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+@using Modelss.Model;
+@model List<Mon_An>
+
+<div class="container-fluid login-banner">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-9">
+                <form action="@Url.Action("xulithemmonan")" method="post" enctype="multipart/form-data">
+                    <div class="container login-table">
+                        <hr />
+
+                     
+                        <label for="monan"><b>Chọn món ăn</b></label>
+                        <br />
+                       <select  name="tenmonan" style="width:100%; height:40px; background-color:#e1d5d5;">
+                          @foreach (var i in Model)
+                          {
+                              <option value="@i.MaMonAn">@i.TenMonAn</option>
+                          }
+                       </select>
+                        <br />
+                        <input type="submit" value="Save" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

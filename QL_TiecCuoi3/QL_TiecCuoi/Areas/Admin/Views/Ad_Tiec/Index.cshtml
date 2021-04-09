@@ -1,0 +1,45 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+@model  IEnumerable<Modelss.Model.Tiec>
+
+
+
+
+<h2>Danh sách sảnh</h2>
+
+<p>
+    @Html.ActionLink("Thêm mới", "themtiec")
+</p>
+<table class ="table">
+    <tr>
+        <th>
+            Thời gian
+        </th>
+        <th>
+            Trạng thái
+        </th>
+        
+        
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ThoiGian)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TrangThai)
+        </td>
+        
+        <td>
+            @Html.ActionLink("Sửa", "Edit", new { id=item.MaTiec }) |
+            @Html.ActionLink("Chi tiết", "Details", new { id=item.MaTiec }) |
+            @Html.ActionLink("Xóa", "Delete", new { id=item.MaTiec })
+        </td>
+    </tr>
+}
+
+</table>
+

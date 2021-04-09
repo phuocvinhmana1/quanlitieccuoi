@@ -1,0 +1,69 @@
+﻿@model Modelss.Model.GoiDichVu
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Sửa</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Gói dịch vụ</legend>
+
+        @Html.HiddenFor(model => model.MaGoiDichVu)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TenGoiDichVu)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TenGoiDichVu)
+            @Html.ValidationMessageFor(model => model.TenGoiDichVu)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TrangThai)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TrangThai)
+            @Html.ValidationMessageFor(model => model.TrangThai)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SoLuong)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SoLuong)
+            @Html.ValidationMessageFor(model => model.SoLuong)
+        </div>
+
+
+         <div class="editor-label">
+            @Html.LabelFor(model => model.TongTien)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TongTien)
+            @Html.ValidationMessageFor(model => model.TongTien)
+
+    
+
+             <div class="editor-label">
+            @Html.LabelFor(model => model.GhiChu)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.GhiChu)
+            @Html.ValidationMessageFor(model => model.GhiChu)
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+

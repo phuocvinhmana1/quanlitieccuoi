@@ -1,0 +1,54 @@
+﻿@{
+    ViewBag.Title = "hienthisanhtiecphuhop";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model Modelss.Model.DatTiec
+
+<section class="confirmation_part section_padding">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="confirmation_tittle">
+                <span>Chúc mừng bạn đã đặt tiệc thành công!</span>
+              </div>
+            </div>
+            <div class="col-lg-6 col-lx-4">
+              <div class="single_confirmation_details">
+                <h4>Thông tin đặt tiệc</h4>
+                <ul>
+                  <li>
+                    <p>Mã đặt tiệc</p><span>: @Model.MaDacTiec</span>
+                  </li>
+                  <li>
+                    <p>Ngày đặt</p><span>: @DateTime.Now.ToString()</span>
+                  </li>
+                  <li>
+                    <p>Ngày tổ chức</p><span>: @Model.NgayToChuc</span>
+                  </li>
+                  <li>
+                    <p>Buổi</p><span>: @Model.Buoi</span>
+                  </li>
+                     <li>
+                    <p>Tổng tiền</p><span>: @Model.TongTien</span>
+                  </li>
+                     <li>
+                    <p>Trạng thái</p><span>: @Model.TrangThai</span>
+                  </li>
+
+                </ul>
+              </div>
+            </div>
+           
+            @{ Html.RenderAction("laykhachhang", "Default1"); }
+
+          </div>
+          <div class="row">
+            <div class="col-lg-12">
+              
+            @*      @{ Html.RenderAction("laydanhsachmonan", "Default1"); }*@
+
+            </div>
+          </div>
+        </div>
+      </section>

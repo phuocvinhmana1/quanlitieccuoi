@@ -1,0 +1,368 @@
+﻿
+
+<!doctype html>
+<html class="no-js" lang="zxx">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Watch shop | eCommers</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+
+    <!-- CSS here -->
+        <link rel="stylesheet" href="assets4/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="assets4/css/owl.carousel.min.css"/>
+        <link rel="stylesheet" href="assets4/css/flaticon.css"/>
+        <link rel="stylesheet" href="assets4/css/slicknav.css"/>
+        <link rel="stylesheet" href="assets4/css/animate.min.css"/>
+        <link rel="stylesheet" href="assets4/css/magnific-popup.css"/>
+        <link rel="stylesheet" href="assets4/css/fontawesome-all.min.css"/>
+        <link rel="stylesheet" href="assets4/css/themify-icons.css"/>
+        <link rel="stylesheet" href="assets4/css/slick.css"/>
+        <link rel="stylesheet" href="assets4/css/nice-select.css"/>
+        <link rel="stylesheet" href="assets4/css/style.css" />
+        <link rel="stylesheet" href="~/assets4/css/testcss.css" />
+
+
+     <link href="assert3/img/favicon.png" rel="icon">
+  <link href="assert3/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assert3/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+   
+    <!--? Preloader Start -->
+    <div id="preloader-active">
+        <div class="preloader d-flex align-items-center justify-content-center">
+            <div class="preloader-inner position-relative">
+                <div class="preloader-circle"></div>
+                <div class="preloader-img pere-text">
+                    <img src="assets4/img/logo/logo.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Preloader Start -->
+    <header>
+        <!-- Header Start -->
+        <div class="header-area">
+            <div class="main-header header-sticky">
+                <div class="container-fluid">
+                    <div class="menu-wrapper">
+                        <!-- Logo -->
+                        <div class="logo">
+                            <a href="index.html"><img src="assets4/img/logo/logo.png" alt=""></a>
+                        </div>
+                        <!-- Main-menu -->
+                        <div class="main-menu d-none d-lg-block">
+                            <nav>                                                
+                                <ul id="navigation">  
+                                    <li><a href="@Url.Action("Index","TrangChu")">Trang chủ</a></li>
+                                    <li><a href="@Url.Action("Index","GioiThieu")">Giới thiệu</a></li>
+                                    <li class="hot"><a href="#">Tiệc cưới</a>
+                                        <ul class="submenu">
+                                            <li><a href="@Url.Action("Index","ThucDon")">Thực đơn</a></li>
+                                            <li><a href="@Url.Action("Index","MonAn")">Món ăn</a></li>
+                                            <li><a href="@Url.Action("Index","GoiDichVu")">Gói Dịch vụ</a></li>
+                                            <li><a href="@Url.Action("Index","DichVu")">Dịch vụ</a></li>
+                                            <li><a href="@Url.Action("Index","SanhTiec")">Sảnh tiệc</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="blog.html"</a>
+                                        <ul class="submenu">
+                                            <li><a href="blog.html">Blog</a></li>
+                                            <li><a href="blog-details.html">Blog Details</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Tuyển dụng</a>
+                                        <ul class="submenu">
+                                            <li><a href="login.html">Login</a></li>
+                                            <li><a href="cart.html">Cart</a></li>
+                                            <li><a href="elements.html">Element</a></li>
+                                            <li><a href="confirmation.html">Confirmation</a></li>
+                                            <li><a href="checkout.html">Product Checkout</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="contact.html">Tài khoản</a>
+
+                                        <ul class="submenu">
+                                            <li><a href="@Url.Action("Index","DangNhap")">Đăng nhập</a></li>
+                                            <li><a href="@Url.Action("Index","DangKy")">Đăng kí</a></li>
+                                         
+                                              @{
+                                                
+                                                 var session = (Modelss.Common.UserLogin)Session[Modelss.Common.CommonConstans.TENDANGNHAP_SESSTION];
+                                                 
+                                               
+                                                   
+                                                 }
+                                            
+
+                                              @{if(session != null)
+                                              {
+          
+                                                <li><a href="@Url.Action("Index", "HoSoKH", new { makhachhang = @session.id })">Xem hồ sơ</a></li>
+        
+       
+      
+                                               
+                                                  
+                                              }
+                                               
+        
+                                               }
+                                           
+
+                                            
+                                        </ul>
+
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <!-- Header Right -->
+                        <div class="header-right">
+                            <ul>
+                               
+                                
+                                <li><a href="@Url.Action("Index","GioHang")"><span class="flaticon-shopping-cart"></span></a> </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Mobile Menu -->
+                    <div class="col-12">
+                        <div class="mobile_menu d-block d-lg-none"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Header End -->
+    </header>
+    <main>
+        <!--? Hero Area Start-->
+                @RenderBody()
+  
+              
+                 
+        <!--? Hero Area End-->
+
+
+
+        <!-- ================ contact section start ================= -->
+        <section id="contact" class="contact">
+      <div class="container">
+
+        <div class="section-title">
+       
+          <h3>Liên hệ</h3>
+         
+        </div>
+
+        <div>
+          <iframe style="border:0; width: 100%; height: 270px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" allowfullscreen></iframe>
+        </div>
+
+        <div class="row mt-5">
+
+          <div class="col-lg-4">
+            <div class="info">
+              <div class="address">
+                <i class="icofont-google-map"></i>
+                <h4>Địa chủ:</h4>
+                <p>655/49 Lê Trọng Tấn, Phường Bình Hưng Hòa, Quận Bình Tân</p>
+              </div>
+
+              <div class="email">
+                <i class="icofont-envelope"></i>
+                <h4>Email:</h4>
+                <p>Phuocvinhmana1@gmail.com</p>
+              </div>
+
+              <div class="phone">
+                <i class="icofont-phone"></i>
+                <h4>SĐT</h4>
+                <p>+(84) 834 566 525</p>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="col-lg-8 mt-5 mt-lg-0">
+
+            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+              <div class="form-row">
+                <div class="col-md-6 form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Nhập tên" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                  <div class="validate"></div>
+                </div>
+                <div class="col-md-6 form-group">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Địa chỉ Email" data-rule="email" data-msg="Please enter a valid email" />
+                  <div class="validate"></div>
+                </div>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Chủ đề" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                <div class="validate"></div>
+              </div>
+              <div class="form-group">
+                <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Nội dung"></textarea>
+                <div class="validate"></div>
+              </div>
+              <div class="mb-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+              </div>
+                  <div class="text-center"><button type="submit">Gửi yêu cầu</button></div>
+            </form>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+        <!-- ================ contact section end ================= -->
+    </main>
+    <footer>
+        <!-- Footer Start-->
+        <div class="footer-area footer-padding">
+            <div class="container">
+                <div class="row d-flex justify-content-between">
+                    <div class="col-xl-3 col-lg-3 col-md-5 col-sm-6">
+                        <div class="single-footer-caption mb-50">
+                            <div class="single-footer-caption mb-30">
+                                <!-- logo -->
+                                <div class="footer-logo">
+                                    <a href="index.html"><img src="assets/img/logo/logo2_footer.png" alt=""></a>
+                                </div>
+                                <div class="footer-tittle">
+                                    <div class="footer-pera">
+                                        <p>Asorem ipsum adipolor sdit amet, consectetur adipisicing elitcf sed do eiusmod tem.</p>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-3 col-md-3 col-sm-5">
+                        <div class="single-footer-caption mb-50">
+                            <div class="footer-tittle">
+                                <h4>Quick Links</h4>
+                                <ul>
+                                    <li><a href="#">About</a></li>
+                                    <li><a href="#"> Offers & Discounts</a></li>
+                                    <li><a href="#"> Get Coupon</a></li>
+                                    <li><a href="#">  Contact Us</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-7">
+                        <div class="single-footer-caption mb-50">
+                            <div class="footer-tittle">
+                                <h4>New Products</h4>
+                                <ul>
+                                    <li><a href="#">Woman Cloth</a></li>
+                                    <li><a href="#">Fashion Accessories</a></li>
+                                    <li><a href="#"> Man Accessories</a></li>
+                                    <li><a href="#"> Rubber made Toys</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-5 col-sm-7">
+                        <div class="single-footer-caption mb-50">
+                            <div class="footer-tittle">
+                                <h4>Support</h4>
+                                <ul>
+                                    <li><a href="#">Frequently Asked Questions</a></li>
+                                    <li><a href="#">Terms & Conditions</a></li>
+                                    <li><a href="#">Privacy Policy</a></li>
+                                    <li><a href="#">Report a Payment Issue</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Footer bottom -->
+                <div class="row align-items-center">
+                    <div class="col-xl-7 col-lg-8 col-md-7">
+                        <div class="footer-copy-right">
+                            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>                  
+                        </div>
+                    </div>
+                    <div class="col-xl-5 col-lg-4 col-md-5">
+                        <div class="footer-copy-right f-right">
+                            <!-- social -->
+                            <div class="footer-social">
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="https://www.facebook.com/sai4ull"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-behance"></i></a>
+                                <a href="#"><i class="fas fa-globe"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End-->
+    </footer>
+    <!--? Search model Begin -->
+    <div class="search-model-box">
+        <div class="h-100 d-flex align-items-center justify-content-center">
+            <div class="search-close-btn">+</div>
+            <form class="search-model-form">
+                <input type="text" id="search-input" placeholder="Searching key.....">
+            </form>
+        </div>
+    </div>
+    <!-- Search model end -->
+
+    <!-- JS here -->
+	
+    <script src="./assets4/js/vendor/modernizr-3.5.0.min.js"></script>
+    <!-- Jquery, Popper, Bootstrap -->
+    <script src="./assets4/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="./assets4/js/popper.min.js"></script>
+    <script src="./assets4/js/bootstrap.min.js"></script>
+    <!-- Jquery Mobile Menu -->
+    <script src="./assets4/js/jquery.slicknav.min.js"></script>
+
+    <!-- Jquery Slick , Owl-Carousel Plugins -->
+    <script src="./assets4/js/owl.carousel.min.js"></script>
+    <script src="./assets4/js/slick.min.js"></script>
+    
+    <!-- One Page, Animated-HeadLin -->
+    <script src="./assets4/js/wow.min.js"></script>
+    <script src="./assets4/js/animated.headline.js"></script>
+    
+    <!-- Scroll up, nice-select, sticky -->
+    <script src="./assets4/js/jquery.scrollUp.min.js"></script>
+    <script src="./assets4/js/jquery.nice-select.min.js"></script>
+    <script src="./assets4/js/jquery.sticky.js"></script>
+    <script src="./assets4/js/jquery.magnific-popup.js"></script>
+
+    <!-- contact js -->
+    <script src="./assets4/js/contact.js"></script>
+    <script src="./assets4/js/jquery.form.js"></script>
+    <script src="./assets4/js/jquery.validate.min.js"></script>
+    <script src="./assets4/js/mail-script.js"></script>
+    <script src="./assets4/js/jquery.ajaxchimp.min.js"></script>
+    
+    <!-- Jquery Plugins, main Jquery -->	
+    <script src="./assets4/js/plugins.js"></script>
+    <script src="./assets4/js/main.js"></script>
+        
+</body>
+
+</html>

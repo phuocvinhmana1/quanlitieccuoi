@@ -1,0 +1,138 @@
+﻿
+@model List<Modelss.Framework.Mon_An>
+@using Modelss.Model;
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@{
+  
+    var session = (Modelss.Common.UserLogin)Session[Modelss.Common.CommonConstans.TENDANGNHAP_SESSTION];
+    
+    
+    }
+
+
+
+    @{if(session != null)
+      {
+          <ul style="margin-left:1300px"> 
+              <li>Xin chào,@session.tendangnhap</li>
+          </ul>
+       
+        <ul style="margin-left:1300px">
+            <li>@Html.ActionLink("Thoát","DangXuat","DangNhap")</li>
+        </ul>
+    }
+        
+        <section class="cart_area section_padding" style ="margin-top:-100px">
+        <div class="container">
+
+
+
+
+                
+@*                     @Html.Partial("chonNgayToChuc")*@
+
+               
+          
+          
+
+
+                <a href="@Url.Action("dattiec","DatTiec")" style="margin-left:20px">Tiến hành đặt tiệc</a>
+         
+
+
+
+
+
+
+          <div class="cart_inner" style ="margin-top:50px">
+            <div class="table-responsive">
+
+                <h3>Thực đơn của bạn</h3>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Tên món ăn</th>
+                      <th scope="col">Loại món ăn</th>
+                    <th scope="col">Giá</th>
+                    <th scope="col">Trạng thái</th>
+                  
+                  </tr>
+                </thead>
+                <tbody> 
+
+                     @foreach(var item in Model)
+                {
+                  <tr id ="row_@item.MaMonAn">
+                      <td>@item.TenMonAn</td>
+                      <td>@item.LoaiMonAn1.TenLoaiMonAn</td>
+                      <td>@item.GiaTien</td>
+                      <td>@item.TrangThai</td>
+
+                      <td>
+                      @Html.ActionLink("Xóa", "delete","HoSoKH", new { mamonan = item.MaMonAn }, null)
+                      </td>
+                    
+                  </tr>
+                }
+
+               
+
+
+                  
+                  <tr class="shipping_area">
+                    <td></td>
+                    <td></td>
+                    <td>
+                      <h5>Tổng tiền    </h5>
+                    </td>
+                    <td>
+                      <div class="shipping_box">
+                        <ul class="list">
+                          <li>
+                            @ViewBag.tinhtienthucdon VND
+                            
+                          </li>
+                         
+                        </ul>  
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="checkout_btn_inner float-right">
+                <a class="btn_1" href="@Url.Action("Index","MonAn")">Đến trang món ăn</a>
+                <a class="btn_1 checkout_btn_1" href="@Url.Action("xoaHetMonAn", "HoSoKH")">Xóa hết món ăn</a>
+              </div>
+            </div>
+          </div>
+            </div>
+
+             @{ Html.RenderAction("laychitietthucdonkhchon", "HoSoKH", new { makhachhang = @session.id }); }
+
+
+            
+
+             
+           
+      </section>
+
+        
+        
+        
+        
+    }
+    else
+    {
+          <ul style="margin-left:700px"> 
+              <li>Vui lòng đăng nhập!</li>
+          </ul>
+          
+      }
+        
+    }
+

@@ -1,0 +1,58 @@
+﻿@{
+    ViewBag.Title = "themsanhtiec";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<h2>Create</h2>
+
+<div class="container-fluid login-banner">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-9">
+                <form action="@Url.Action("xulithemsanhtiec")" method="post" enctype="multipart/form-data">
+                    <div class="container login-table">
+                        <hr />
+
+                     
+                        <label for="tensanh"><b>Tên sảnh</b></label>
+                         <input type="text" name="tensanh"  required />
+                        <br />
+                       <select  name="loaisanh" style="width:100%; height:40px; background-color:#e1d5d5;">
+                        
+                              <option value="Loại A">Loai A</option>
+                             <option value="Loại B">Loại B</option>
+                             <option value="Loại C">Loại C</option>
+                          
+                       </select>
+                        <br />
+                        <label for="soban"><b>Số bàn</b></label>
+                        <input type="text" name="soban"  required />
+                        <label for="dongia"><b>Giá</b></label>
+                        <input type="text" name="dongia"  required />
+
+
+                        <label for="hinh"><b>Hình Ảnh</b></label>
+                        <br />
+                        <input type="file" name="hinh" required />
+                        <br />
+                    
+                      
+                        <label for="ghichu"><b>Ghi chú</b></label>
+                        <input  type="text" name="ghichu"  required />
+                        <label for="trangthai"><b>Trạng thái</b></label>
+                        <input  type="text" name="trangthai"  required />
+                        <label for="mota"><b>Mô tả</b></label>
+                        <input  type="text" name="mota"  required />
+
+                        <input type="submit" value="Save" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

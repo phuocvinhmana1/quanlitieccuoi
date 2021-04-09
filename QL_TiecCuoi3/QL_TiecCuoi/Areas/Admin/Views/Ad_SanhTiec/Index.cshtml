@@ -1,0 +1,78 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@model  IEnumerable<Modelss.Model.ThongTinSanh>
+
+
+
+
+<h2>Danh sách sảnh</h2>
+
+<p>
+    @Html.ActionLink("Thêm mới", "themsanhtiec")
+</p>
+<table class ="table">
+    <tr>
+        <th>
+            Tên sảnh
+        </th>
+        <th>
+            Loại sảnh
+        </th>
+        <th>
+            Số lượng bàn
+        </th>
+        <th>
+            Đơn giá
+        </th>
+        <th>
+            Ghi chú
+        </th>
+        <th>
+            Trạng thái
+        </th>
+        <th>
+            Mô tả
+        </th>
+        <th>
+            Hình ảnh
+        </th>
+        
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenSanh)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LoaiSanh)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SoLuongBan)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DonGia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GhiChu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TrangThai)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MoTa)
+        </td>
+          <td>
+            @Html.DisplayFor(modelItem => item.Hinh)
+        </td>
+        <td>
+            @Html.ActionLink("Sửa", "Edit", new { id= item.MaSanh }) |
+            @Html.ActionLink("Xóa", "Delete", new { id= item.MaSanh })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,75 @@
+﻿@model Modelss.Model.Mon_An
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>TaiKhoan</legend>
+
+        @Html.HiddenFor(model => model.MaMonAn)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TenMonAn)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TenMonAn)
+            @Html.ValidationMessageFor(model => model.TenMonAn)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LoaiMonAn1.TenLoaiMonAn)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LoaiMonAn1.TenLoaiMonAn)
+            @Html.ValidationMessageFor(model => model.LoaiMonAn1.TenLoaiMonAn)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.GhiChu)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.GhiChu)
+            @Html.ValidationMessageFor(model => model.GhiChu)
+        </div>
+
+
+         <div class="editor-label">
+            @Html.LabelFor(model => model.GiaTien)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.GiaTien)
+            @Html.ValidationMessageFor(model => model.GiaTien)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TrangThai)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TrangThai)
+            @Html.ValidationMessageFor(model => model.TrangThai)
+        </div>
+
+             <div class="editor-label">
+            @Html.LabelFor(model => model.MoTa)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.MoTa)
+            @Html.ValidationMessageFor(model => model.MoTa)
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+

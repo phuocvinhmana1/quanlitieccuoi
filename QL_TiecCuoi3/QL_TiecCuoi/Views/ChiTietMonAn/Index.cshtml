@@ -1,0 +1,61 @@
+﻿@{
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using Modelss.Model;
+
+@model Mon_An
+@{
+    var session = (Modelss.Common.UserLogin)Session[Modelss.Common.CommonConstans.TENDANGNHAP_SESSTION];
+    }
+
+@{if(session != null)
+      {
+          <ul style="margin-left:1000px"> 
+              <li>Xin chào,   @session.tendangnhap</li>
+          </ul>
+       
+        <ul style="margin-left:1000px">
+            <li>@Html.ActionLink("Thoát","DangXuat","DangNhap")</li>
+        </ul>
+    }
+    }
+
+<div class="container minheight" >
+    <hr style="width:100%"/>
+    <div class="row">
+        <div class="col-md-6">
+            <img src="../Content/hinhanh/anhmonan/@Model.HinhAnh" width="500" height="300"/>
+        </div>
+        <div class="col-md-6">
+            <p>Mã món ăn: @Model.MaMonAn</p>
+            <h3>Tên sản phẩm: @Model.TenMonAn</h3>
+
+ 
+@*              @{ Html.RenderAction("layTenMonAn", "ThucDon", new { thucdon = @Model.MaThucDon }); }*@
+
+
+            <h4>Giá tham khảo: @Model.GiaTien VND</h4>
+
+            <p>@Model.MoTa</p>
+            
+             <a href="@Url.Action("them", "HoSoKH", new {mamonan = @Model.MaMonAn })" class="genric-btn success">Thêm vào thực đơn của bạn</a>
+             @{if(Modelss.Common.CommonConstans.kiemtra == "1")
+               {
+                  
+                  @Html.ValidationMessage("loi")
+                 @Html.ValidationSummary(true)
+                    
+               }
+               else
+               {
+                   @Html.ValidationMessage("khongloi")
+               }
+                   }
+         
+            
+        </div>
+    </div>
+</div>
+

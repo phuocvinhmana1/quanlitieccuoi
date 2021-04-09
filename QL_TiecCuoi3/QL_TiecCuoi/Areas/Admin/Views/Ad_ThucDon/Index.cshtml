@@ -1,0 +1,66 @@
+﻿@model IEnumerable<Modelss.Model.ThucDon>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Danh sách thực đơn</h2>
+
+<p>
+    @Html.ActionLink("Thêm mới thực đơn", "themthucdon")
+</p>
+<table class ="table">
+    <tr>
+        <th>
+            Tên thực đơn
+        </th>
+        <th>
+            Trạng thái
+        </th>
+        <th>
+            
+             Số lượng món
+        </th>
+        <th>
+           Tổng đơn giá
+        </th>
+        <th>
+            Mô tả
+        </th>
+      
+
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) 
+{
+    <tr>
+       
+        <td>
+            @Html.DisplayFor(modelItem => item.TenThucDon)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TrangThai)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SoLuongMon)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TongDonGia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GhiChu)
+        </td>
+
+       
+        <td>
+           
+             @Html.ActionLink("Xem chi tiết", "Details", new { id=item.MaThucDon }) |
+             @Html.ActionLink("Sửa", "Edit", new { id=item.MaThucDon })  
+            
+        </td>
+    </tr>
+}
+
+</table>

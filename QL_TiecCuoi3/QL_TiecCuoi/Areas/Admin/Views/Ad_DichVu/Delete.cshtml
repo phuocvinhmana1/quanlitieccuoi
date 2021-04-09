@@ -1,0 +1,61 @@
+﻿@model Modelss.Model.DichVu
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Bạn có chắc chắn xóa dịch vụ này này?</h3>
+<fieldset>
+    <legend>TaiKhoan</legend>
+
+    <div class="display-label">
+         Tên món
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TenDichVu)
+    </div>
+
+    <div class="display-label">
+         loại
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LoaiDichVu1.TenLoaiDichVu)
+    </div>
+
+    <div class="display-label">
+         giá
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.GiaTien)
+    </div>
+
+    <div class="display-label">
+        mô tả
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MoTa)
+    </div>
+
+    <div class="display-label">
+         trạng thái
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TrangThai)
+    </div>
+
+    <div class="display-label">
+        ghi chú
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.GhiChu)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

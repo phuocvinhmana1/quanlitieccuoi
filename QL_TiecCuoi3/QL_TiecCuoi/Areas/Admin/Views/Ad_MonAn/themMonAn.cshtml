@@ -1,0 +1,64 @@
+﻿@{
+    ViewBag.Title = "themMonAn";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+
+
+@model List<Modelss.Model.LoaiMonAn>
+
+<h2>Create</h2>
+
+<div class="container-fluid login-banner">
+    <di v class="container">
+        <div class="row">
+
+            <div class="col-md-12">
+                <form action="@Url.Action("xuLythemMonAn")" method="post" enctype="multipart/form-data">
+                    <div class="container login-table">
+                        <hr />
+
+                     
+                        <label for="maloai"><b>Tên Loại</b></label>
+                        <br />
+                       <select  name="loaimonan" style="width:300px; height:40px; background-color:#e1d5d5;">
+                         @foreach (var i in Model)
+                          {
+                              <option value="@i.MaLoaiMonAn">@i.TenLoaiMonAn</option>
+                          }
+                       </select>
+                        <br />
+                        
+                        <label for="tenmonan" style =" margin-top:20px"><b>Tên món ăn</b></label>
+                        <input type="text" name="tenmonan" style="margin-left:10px"  required />
+
+
+                        <br />
+                        <label for="giatien"><b>Giá</b></label>
+                        <input type="text" name="giatien" style ="margin-left:70px; margin-top:10px"  required />
+                        
+                        <br />
+
+                        <label for="hinh"><b>Hình Ảnh</b></label>
+                        <br />
+                        <input type="file" name="hinh" required />
+                        <br />
+                        <label for="ghichu" style="margin-top:10px"><b>Ngày thêm:</b></label>
+                        <label>@DateTime.Now.ToString("dd/MM/yyyy")</label>
+                        <br />
+
+                        <label for="mota"><b>Mô tả</b></label>
+                        <input  type="text" name="mota" style="margin-left:50px;" required />
+                        <br />
+                        <label for="trangthai" style ="margin-top:10px"><b>Trạng thái</b></label>
+                        <input  type="text" name="trangthai" style="margin-left:15px"  required />
+
+                        <br />
+
+                        <input type="submit" value="Save" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </di>
+</div>

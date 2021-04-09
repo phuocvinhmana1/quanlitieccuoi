@@ -1,0 +1,73 @@
+﻿@model List<Modelss.Framework.DichVu>
+
+
+
+        <section class="cart_area section_padding" style ="margin-top:-100px">
+        <div class="container">
+          <div class="cart_inner">
+            <div class="table-responsive">
+
+                <h3>Dịch vụ của bạn</h3>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Tên dịch vụ</th>
+                      <th scope="col">Giá tiền</th>
+                    <th scope="col">Ghi chú</th>
+                    <th scope="col">Trạng thái</th>
+                  
+                  </tr>
+                </thead>
+
+                <tbody>            
+
+                       @foreach(var item in Model)
+                {
+                  <tr id ="row_@item.MaDichVu">
+                      <td>@item.TenDichVu</td>
+                      <td>@item.GiaTien</td>
+                      <td>@item.GhiChu</td>
+                      <td>@item.TrangThai</td>
+                   
+
+                      <td>
+                      @Html.ActionLink("Xóa", "deletedichvu","HoSoKH", new { madichvu = item.MaDichVu }, null)
+                      </td>
+                    
+                  </tr>
+                }
+
+
+
+
+                  
+                  <tr class="shipping_area">
+                    <td></td>
+                    <td></td>
+                    <td>
+                      <h5>Tổng tiền</h5>
+                    </td>
+                    <td>
+                      <div class="shipping_box">
+                        <ul class="list">
+                          <li>
+          @ViewBag.tinhtiendichvu VND
+            
+                 
+                          </li>
+                         
+                        </ul>
+                       
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="checkout_btn_inner float-right">
+                <a class="btn_1" href="@Url.Action("Index","DichVu")">Đến trang dịch vụ</a>
+                <a class="btn_1 checkout_btn_1" href="@Url.Action("xoaHetDichVu","HoSoKH")">Xóa hết dịch vụ</a>
+              </div>
+            </div>
+          </div>
+            </div>
+      </section>

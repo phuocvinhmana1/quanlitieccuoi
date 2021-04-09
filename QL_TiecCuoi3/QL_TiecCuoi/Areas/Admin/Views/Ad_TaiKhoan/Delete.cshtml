@@ -1,0 +1,61 @@
+﻿@model Modelss.Model.TaiKhoan
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Bạn có chắc chắn xóa tài khoản này?</h3>
+<fieldset>
+    <legend>TaiKhoan</legend>
+
+    <div class="display-label">
+         Tên đăng nhập
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TenDangNhap)
+    </div>
+
+    <div class="display-label">
+         Mật khẩu
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MatKhau)
+    </div>
+
+    <div class="display-label">
+         Họ tên
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.HoTen)
+    </div>
+
+    <div class="display-label">
+        Địa chỉ
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DiaChi)
+    </div>
+
+    <div class="display-label">
+         Số điện thoại
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SoDienThoai)
+    </div>
+
+    <div class="display-label">
+        Trạng thái
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TinhTrang)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

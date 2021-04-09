@@ -1,0 +1,67 @@
+﻿@model IEnumerable<Modelss.Model.GoiDichVu>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Danh sách thực đơn</h2>
+
+<p>
+    @Html.ActionLink("Thêm mới gói dịch vụ", "themgoidichvu")
+</p>
+<table class ="table">
+    <tr>
+        <th>
+            Tên gói dịch vụ
+        </th>
+        <th>
+            Trạng thái
+        </th>
+        <th>
+            
+             Số lượng
+        </th>
+        <th>
+           Tổng đơn giá
+        </th>
+        <th>
+            Ghi chú
+        </th>
+      
+
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) 
+{
+    <tr>
+       
+        <td>
+            @Html.DisplayFor(modelItem => item.TenGoiDichVu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TrangThai)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SoLuong)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TongTien)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GhiChu)
+        </td>
+
+       
+        <td>
+           
+             @Html.ActionLink("Xem chi tiết", "Details", new { id=item.MaGoiDichVu }) |
+             
+             @Html.ActionLink("Sửa", "Edit", new { id=item.MaGoiDichVu }) 
+            
+        </td>
+    </tr>
+}
+
+</table>

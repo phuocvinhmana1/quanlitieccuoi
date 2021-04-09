@@ -1,0 +1,71 @@
+﻿@{
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using Modelss.Model;
+
+@model ThongTinSanh
+
+@{
+    var session = (Modelss.Common.UserLogin)Session[Modelss.Common.CommonConstans.TENDANGNHAP_SESSTION];
+    }
+
+@{if(session != null)
+      {
+          <ul style="margin-left:1000px"> 
+              <li>Xin chào,   @session.tendangnhap</li>
+          </ul>
+       
+        <ul style="margin-left:1000px">
+            <li>@Html.ActionLink("Thoát","DangXuat","DangNhap")</li>
+        </ul>
+    }
+    }
+
+<div class="container minheight" >
+   
+    <hr style="width:100%"/>
+    
+        
+           @* <img src="../Content/hinhanh/anhmonan/@Model.Hinh" width="500" height="300"/>*@
+            
+                    
+
+            <h3 style="font-weight:bold; margin-left:450px; margin-top:30px">Sảnh @Model.TenSanh</h3>
+
+ 
+           @*   @{ Html.RenderAction("layTenMonAn", "ThucDon", new { thucdon = @Model.MaThucDon }); }*@
+            <p style="margin-left:450px;">Giá tham khảo: @Model.DonGia VND</p>
+    <a>@Model.MoTa</a>
+            
+            
+         
+
+              <div class="gallery-area" style="margin-top:15px">
+            <div class="container-fluid p-0 fix">
+                
+
+
+                @Html.Partial("ViewAnhChiTiet");
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+        
+
+
+
+
+  
+
+
+
+

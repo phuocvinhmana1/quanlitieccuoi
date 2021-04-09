@@ -1,0 +1,79 @@
+﻿@model IEnumerable<Modelss.Model.Mon_An>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+   
+}
+
+ @{
+    var mathucdon = Session[Modelss.Common.CommonConstans.MaThucDon_SESSTION].ToString();
+    }
+<h2>Danh sách món ăn</h2>
+
+<p>
+    @Html.ActionLink("Thêm mới", "themmonan")
+</p>
+<table class ="table">
+    <tr>
+        <th>
+            Tên món
+        </th>
+        <th>
+            Loại món
+        </th>
+        <th>
+            
+             Giá
+        </th>
+        <th>
+           Trạng thái
+        </th>
+        <th>
+            Ghi chú
+        </th>
+      
+
+        <th>
+            Mô tả
+        </th>
+
+        <th>
+            Hình ảnh
+        </th>
+    </tr>
+
+@foreach (var item in Model) 
+{
+    <tr>
+       
+        <td>
+            @Html.DisplayFor(modelItem => item.TenMonAn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LoaiMonAn1.TenLoaiMonAn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GiaTien)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TrangThai)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GhiChu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MoTa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HinhAnh)
+        </td>
+
+       
+        <td>|
+            @Html.ActionLink("Xóa", "delete", new { id = item.MaMonAn })
+        </td>
+    </tr>
+}
+
+</table>

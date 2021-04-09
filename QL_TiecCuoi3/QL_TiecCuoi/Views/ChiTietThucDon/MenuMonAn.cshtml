@@ -1,0 +1,14 @@
+﻿@*@{
+    ViewBag.Title = "MenuMonAn";
+    
+}*@
+
+@model List<Modelss.Model.ChiTietThucDon>
+
+@foreach(var item in Model)
+{
+     <br />
+        <a>
+           
+            @{ Html.RenderAction("layTenMonAn2", "ThucDon", new { mamonan = @item.MaMonAn }); }</a>
+}

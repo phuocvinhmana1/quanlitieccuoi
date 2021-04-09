@@ -1,0 +1,41 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using Modelss.Model;
+
+@model GoiDichVu
+
+<div class="container minheight" >
+    <hr style="width:100%"/>
+    <div class="row">
+        <div class="col-md-6">
+            <img src="../Content/hinhanh/anhdichvu/casi.jpg" width="500" height="300"/>
+        </div>
+        <div class="col-md-6">
+            <p>Mã gói dịch vụ: @Model.MaGoiDichVu</p>
+            <h3>Tên sản phẩm: @Model.TenGoiDichVu</h3>
+
+            <p>Dịch vụ gồm: Cổng hoa, hoa cưới, MC, trang trí cổng hoa miễn phí,...</p>
+
+ 
+      
+            <h4>Giá tham khảo: @Model.TongTien VND</h4>
+
+             <p>Danh sách dịch vụ</p>
+
+              @{ Html.RenderAction("layTenDichVu", "DichVu", new { magoidichvu = @Model.MaGoiDichVu }); }
+
+            <br />
+
+              <a href="@Url.Action("themgoidichvu", "ChiTietGoiDichVu", new { magoidichvu = @Model.MaGoiDichVu})" class="genric-btn success" style="margin-top:20px">Thêm vào gói dịch vụ của bạn</a>
+            <br />
+            <p>Lưu ý: Việc này sẽ làm mất tất cả các dịch vụ mà bạn đã chọn</p>
+            
+         
+         
+            
+        </div>
+    </div>
+</div>

@@ -1,0 +1,85 @@
+﻿@model Modelss.Model.TaiKhoan
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Thêm mới</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    
+    
+    
+    
+
+        <div class="editor-label">
+            Tên đăng nhập
+        </div>
+
+         @*<div class="form-group">
+            @Html.TextBoxFor(model => model.TenDangNhap,new { @class = "form-control form-control-user" , placeholder="Nhập tên đăng nhập..." })
+        </div>*@
+
+        <div class="form-group">
+            @Html.TextBoxFor(model => model.TenDangNhap, new { @class = "form-control form-control-user" , placeholder="Nhập tên đăng nhập..." })
+            @Html.ValidationMessageFor(model => model.TenDangNhap)
+        </div>
+
+        <div class="editor-label">
+            Mật khẩu
+        </div>
+        <div class="form-group">
+            @Html.TextBoxFor(model => model.MatKhau, new { @class = "form-control form-control-user" , placeholder="Nhập mật khẩu..." })
+            @Html.ValidationMessageFor(model => model.MatKhau)
+        </div>
+
+        <div class="editor-label">
+            Họ tên
+        </div>
+        <div class="form-group">
+            @Html.TextBoxFor(model => model.HoTen, new { @class = "form-control form-control-user" , placeholder="Nhập loại tài khoản..." })
+            @Html.ValidationMessageFor(model => model.HoTen)
+        </div>
+    
+     <div class="editor-label">
+            Địa chỉ
+        </div>
+        <div class="form-group">
+            @Html.TextBoxFor(model => model.DiaChi, new { @class = "form-control form-control-user" , placeholder="Nhập loại tài khoản..." })
+            @Html.ValidationMessageFor(model => model.DiaChi)
+        </div>
+    
+     <div class="editor-label">
+            Số điện thoại
+        </div>
+        <div class="form-group">
+            @Html.TextBoxFor(model => model.SoDienThoai, new { @class = "form-control form-control-user" , placeholder="Nhập loại tài khoản..." })
+            @Html.ValidationMessageFor(model => model.SoDienThoai)
+        </div>
+    
+    
+    
+    
+
+        <div class="editor-label">
+            Trạng thái
+        </div>
+        <div class="form-group">
+            @Html.TextBoxFor(model => model.TinhTrang, new { @class = "form-control form-control-user" , placeholder="Nhập trạng thái..." })
+            @Html.ValidationMessageFor(model => model.TinhTrang)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+   
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+

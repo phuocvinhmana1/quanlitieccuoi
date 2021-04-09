@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "Index2";
+}
+
+
+
+@{
+    var session = (Modelss.Common.UserLogin)Session[Modelss.Common.CommonConstans.TENDANGNHAP_SESSTION];
+    }
+
+
+   @{if(session != null)
+      {
+          <ul style="margin-left:1300px"> 
+              <li>Xin chào,@session.tendangnhap</li>
+          </ul>
+        <ul style="margin-left:1300px">
+            <li>@Html.ActionLink("Thoát","DangXuat","DangNhap")</li>
+        </ul>
+    }
+        
+    }
+
+<div class ="container">
+
+    <p style ="margin-left:450px;">Đặt tiệc thất bại!!</p>
+
+</div>
+
+

@@ -1,0 +1,44 @@
+﻿@{
+    ViewBag.Title = "hienthisanhtiecphuhop";
+   
+}
+@using Modelss.Model;
+@model List<ThongTinSanh>
+
+
+
+<div class="container">
+
+    <h1 style="margin-left:600px">Sảnh tiệc phù hợp</h1>
+
+    <form action="@Url.Action("xulihoantatdattiec")" method="post" enctype="multipart/form-data" style ="margin-left:650px">
+       
+      @if (Model == null)
+      {
+          <a>khong co thong tin hien thi</a> 
+      
+      }
+    
+      
+    <select name ="tensanh">
+
+        @{foreach(var item in Model)
+          { 
+               
+              <option value="@item.MaSanh">@item.TenSanh</option>
+        }
+    
+    }
+
+    </select>
+
+
+        <input type="submit" value="Hoàn tất" />
+
+</form>
+
+
+</div>
+
+
+
